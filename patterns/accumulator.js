@@ -5,7 +5,7 @@
  * @returns `0` if n is 0 or negative
  */
 export function sumToN(n) {
-  if (typeof n !== "number") return NaN;
+  if (typeof n !== 'number') return NaN;
 
   let sum = 0;
   for (let i = 1; i <= n; i++) {

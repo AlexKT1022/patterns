@@ -7,14 +7,14 @@
  * @returns `[]` if either argument is 0 or negative
  */
 export function makeBoard(rows, cols) {
-  if (typeof rows !== "number" || typeof cols !== "number") return null;
+  if (typeof rows !== 'number' || typeof cols !== 'number') return null;
   if (rows <= 0 || cols <= 0) return [];
 
   const board = [];
   for (let i = 0; i < rows; i++) {
     const row = [];
     for (let j = 0; j < cols; j++) {
-      row.push("-");
+      row.push('-');
     }
     board.push(row);
   }

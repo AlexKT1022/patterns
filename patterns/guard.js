@@ -5,7 +5,7 @@
  * @returns `NaN` if either argument is not a number
  */
 export function multiply(num1, num2) {
-  if (typeof num1 !== "number" || typeof num2 !== "number") {
+  if (typeof num1 !== 'number' || typeof num2 !== 'number') {
     return NaN;
   }
   return num1 * num2;
