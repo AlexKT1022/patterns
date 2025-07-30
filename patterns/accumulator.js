@@ -23,6 +23,17 @@ export function sumToN(n) {
  */
 export function factorial(n) {
   // TODO
+  if (typeof n !== 'number') return NaN;
+  if (n < 0) return undefined;
+  if (n === 0 || n === 1) return 1;
+
+  let fact = 1;
+
+  for (let i = 1; i <= n; i++) {
+    fact *= i;
+  }
+
+  return fact;
 }
 
 /**
@@ -33,6 +44,18 @@ export function factorial(n) {
  */
 export function buildNArray(n) {
   // TODO
+  if (typeof n !== 'number') return null;
+  if (n <= 0) return [];
+
+  const arr = [];
+
+  for (let i = 0; i < n; i++) {
+    arr.push(i + 1);
+  }
+
+  return arr;
+
+  // return [...Array(n).keys()].map((i) => i + 1);
 }
 
 /**
@@ -41,6 +64,15 @@ export function buildNArray(n) {
  */
 export function getLongestString(strings) {
   // TODO
+  let currentLongest = '';
+
+  for (let i of strings) {
+    if (i.length > currentLongest.length) {
+      currentLongest = i;
+    }
+  }
+
+  return currentLongest;
 }
 
 /**
@@ -49,6 +81,10 @@ export function getLongestString(strings) {
  */
 export function countPresent(attendance) {
   // TODO
+  return attendance.reduce(
+    (numPresent, student) => numPresent + Number(student),
+    0
+  );
 }
 
 /**
@@ -63,4 +99,21 @@ export function countPresent(attendance) {
  */
 export function complementDNA(dna) {
   // TODO
+  if (typeof dna !== 'string') return null;
+
+  let complement = '';
+
+  dna.split('').forEach((sym) => {
+    if (sym === 'A') {
+      complement += 'T';
+    } else if (sym === 'T') {
+      complement += 'A';
+    } else if (sym === 'C') {
+      complement += 'G';
+    } else if (sym === 'G') {
+      complement += 'C';
+    }
+  });
+
+  return complement;
 }
